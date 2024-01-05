@@ -52,8 +52,13 @@ For example, lets say you want to estimate the distance of water bottle from the
 
 ## Important Note:
 - A critical consideration when utilizing the camera to estimate an object's distance is that the calculation of distance relies solely on the object's width as it appears within the camera frame. The height of the object, in this context, doesn’t play a role in determining the distance. This implies that when the camera is pointed at an object for distance estimation, what matters is the horizontal span of the object that appears within the frame. For accurate distance calculations, the script evaluates the width of detected objects based on their appearance in the captured video or image feed.
+
+  ![294487980-58564d13-b1d1-46de-9754-a3d409aea718](https://github.com/SpawnedNPC/DistanceEstimationYoloV8/assets/125773427/3495cf1c-b28c-49a1-a7d3-b03dfffac9fc)               ![Image Editing Services](https://github.com/SpawnedNPC/DistanceEstimationYoloV8/assets/125773427/4a44f3b9-561d-4cdb-94e9-1399c00090f4)
+
+
+
   
 - You can modify the units of the distance by simply applying the formulas or capture the object images in required units.
-- If there are more than one camera connected to PC, then modify the index here accordingly ```camera = cv2.VideoCapture(0```.
+- If there are more than one camera connected to PC, then modify the index here accordingly ```camera = cv2.VideoCapture(0)```.
   
 
