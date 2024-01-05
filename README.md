@@ -39,5 +39,21 @@ Note: There is a person and cell phone in cell phone reference image. Model migh
 For example, lets say you want to estimate the distance of water bottle from the camera. Put ```bottle: 2.5``` in the class_width where 2.5 is width of the bottle in inchs in the reality. And Upload the image of the bottle taken at known distance (say 45 inchs from the camera).
 
 
-##
+## How it works
+- The script first loads the YOLOv8 model (`yolov8s.pt`) for object detection.
+- Variables such as known distance, and confidence threshold can be modified based on you requirement.
+- Camera setup is initialized using OpenCV (`cv2.VideoCapture`).
+- Class names and their real-world widths in inches are defined.
+- Functions are provided to calculate focal length and distance based on object width in the frame.
+- Focal lengths for each class are calculated using reference images.
+- Real-time object detection and distance estimation are performed in a continuous loop.
+- Detected objects' distances are displayed on the frame in real-time.
+- Press 'q' to quit the application.
+
+## Important Note:
+- A critical consideration when utilizing the camera to estimate an object's distance is that the calculation of distance relies solely on the object's width as it appears within the camera frame. The height of the object, in this context, doesn’t play a role in determining the distance. This implies that when the camera is pointed at an object for distance estimation, what matters is the horizontal span of the object that appears within the frame. For accurate distance calculations, the script evaluates the width of detected objects based on their appearance in the captured video or image feed.
+  
+- You can modify the units of the distance by simply applying the formulas or capture the object images in required units.
+- If there are more than one camera connected to PC, then modify the index here accordingly ```camera = cv2.VideoCapture(0```.
+  
 
